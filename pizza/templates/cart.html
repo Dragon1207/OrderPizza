@@ -15,7 +15,7 @@
         <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-primary">Your cart</span>
-                <span class="badge bg-primary rounded-pill">{{orders_count}}</span>
+                <span id="orders_count1" class="badge bg-primary rounded-pill"></span>
             </h4>
             <ul class="list-group mb-3">
                 {% for order in cart %}
@@ -212,6 +212,10 @@
         </div>
     </div>
 </main>
-
+<script>
+fetch('/contextdata')
+.then(response => response.json())
+.then(data => {document.getElementById("orders_count1").innerHTML=data.orders_count});
+</script>
 
 {% endblock %}
