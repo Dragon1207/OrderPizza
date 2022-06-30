@@ -9,6 +9,7 @@ from pizza.views import (
     OrderCreateView,
     PizzaDetailView,
     PizzaMenuListView,
+    contextData,
 )
 
 urlpatterns = [
@@ -20,4 +21,5 @@ urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("order/", OrderCreateView.as_view(), name="create"),
+    path("contextdata/", contextData, name="contextData"),
 ]
